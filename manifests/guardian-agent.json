@@ -1,0 +1,18 @@
+{
+  "agent_id": "solar-guardian-alpha",
+  "name": "Solar Solution Cyber-Log Guardian",
+  "type": "Guardian",
+  "compliance_level": "NIST-800-53-R5",
+  "ksa": {
+    "knowledge": ["Sophos XDR Telemetry", "KQL", "Entra ID Identity Logic"],
+    "skills": ["Autonomous Triage", "Intune Device Isolation"],
+    "attributes": ["Zero-Trust Aligned", "24/7 Monitoring"]
+  },
+  "tools": [
+    "sophos_xdr_connector",
+    "ms_sentinel_writer",
+    "intune_graph_api_client"
+  ],
+  "emits": ["unified_finding_json", "teams_notification"],
+  "consumes": ["sophos_threat_stream", "sentinel_incident_log"]
+}
