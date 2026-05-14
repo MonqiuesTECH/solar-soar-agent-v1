@@ -1,0 +1,23 @@
+{
+  "playbook_id": "isolate-compromised-endpoint",
+  "trigger": "high_severity_malware_detected",
+  "actions": [
+    {
+      "step": 1,
+      "tool": "ms_sentinel_writer",
+      "command": "create_incident",
+      "params": { "severity": "High", "owner": "Monique Bruce" }
+    },
+    {
+      "step": 2,
+      "tool": "intune_graph_api_client",
+      "command": "isolate_device",
+      "params": { "action": "RebootAndQuarantine" }
+    },
+    {
+      "step": 3,
+      "tool": "teams_notification",
+      "message": "🚨 Solar-Guardian isolated a device based on Sophos XDR telemetry. Review incident in Sentinel."
+    }
+  ]
+}
