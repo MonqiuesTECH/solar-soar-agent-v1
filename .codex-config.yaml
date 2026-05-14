@@ -1,0 +1,12 @@
+version: "3.1"
+environment:
+  type: "MSSP-Edge"
+  deployment_zone: "US-East-1"
+build:
+  engine: "CodeX-L4"
+  qa_threshold: 1.0 # Requires Grade A (100%) to deploy
+connectors:
+  - name: "SophosCentral"
+    auth: "OAuth2"
+  - name: "MicrosoftGraph"
+    auth: "ManagedIdentity"
